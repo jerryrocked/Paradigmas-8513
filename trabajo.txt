@@ -1,0 +1,46 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+using namespace std;
+fstream archivo;
+
+void leer_archivo()
+{
+  archivo.open("archivo1.txt", ios::in);
+  if(archivo.is_open()){
+    char nombre[50];
+    string nombres[50];
+    float n1,n2,n3,n4,x,n;
+    float promedios[50];
+    int i=0;
+    while(!archivo.eof() ){
+
+      archivo>>nombre>>n1>>n2>>n3>>n4;
+      cout<<"Registro de alumno\n";
+      cout<<"Nombre: "<<nombre<<endl;
+      cout<<"Nota 1: "<<n1<<endl;
+      cout<<"Nota 2: "<<n2<<endl;
+      cout<<"Nota 3: "<<n3<<endl;
+      cout<<"Nota 4: "<<n4<<endl;
+      x = n1+n2+n3+n4;
+      n = x/4;
+      cout<<"El promedio es: "<<n<<endl;
+      nombres[i]= nombre;
+      promedios[i] = n;
+      if (i<7){
+        cout<<"Se encuentra guardado correctamente: "<<nombres[i]<<endl;
+        cout<<"El promedio del alumno se encuentra guardado: "<<promedios[i]<<endl;
+        i++;
+      }
+    }
+    archivo.close();
+  }
+  else
+  {
+    cout<<"El archivo no se encontro: ";
+  }
+}
+int main(){
+  leer_archivo();
+  return 0;
+}

@@ -1,0 +1,7 @@
+jesus 3 4 5 6
+jose 5 6 5 4
+luis 6 7 7 6
+maria 5 5 5 5
+ana 7 7 7 7
+pedro 3 3 4 4
+pablo 4 5 4 4
